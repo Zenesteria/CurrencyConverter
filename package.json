@@ -4,5 +4,23 @@
     "ejs": "^3.1.7",
     "express": "^4.17.3",
     "heroku-postbuild": "npm run build"
-  }
+  },
+  "name": "currency_converter",
+  "version": "1.0.0",
+  "main": "app.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Zenesteria/CurrencyConverter.git"
+  },
+  "author": "Mr-Adebisi-Abdurrahman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Zenesteria/CurrencyConverter/issues"
+  },
+  "homepage": "https://github.com/Zenesteria/CurrencyConverter#readme",
+  "description": ""
 }
