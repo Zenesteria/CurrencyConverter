@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/master.css">
+    <title>Currency Converter</title>
+</head>
+<body>
+    <section class="container">
+        <div class="backdrop"></div>
+        <div class="currency-wrapper">
+            <h1><%= title %> </h1>
+            <form action="/convert" method="POST" style="color: white;">
+                <div class="currencies">
+
+                    <!-- BASE CURRENCY -->
+                    <select name="base_currency">
+                        <% currencies.map((currency) => { %>
+                            <% if(currency === prevData[0] ){ %>
+                                <option value=<%=currency%> selected><%=currency%></option>
+                           <% }; %> 
+
+                            <% if(currency != prevData[0]){ %>
+                                <option value=<%=currency%>><%=currency%></option>
+                            <% } %>
+                      <%  }) %>
+                    </select>
+
+                    <button type="submit"><img src="/img/conversion.png" alt="convert"></button>
+
+                    <!-- TARGET CURRENCY -->
+                    <select name="target_currency">
+                        <% currencies.map((currency) => { %>
+                            <% if(currency === prevData[1] ){ %>
+                                <option value=<%=currency%> selected><%=currency%></option>
+                           <% } %> 
+
+                            <% if(currency != prevData[1]){ %>
+                                <option value=<%=currency%>><%=currency%></option>
+                            <% } %>
+                      <%  }) %>
+                    </select>
+                </div>
+                <input type="currency" name="amt_base_currency" value=<%= prevData[2] %>  required>
+                <h1 class="result"><%= result %> </h1>
+            </form>
+        </div>
+    </section>
+</body>
+</html>
